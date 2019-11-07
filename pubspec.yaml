@@ -1,0 +1,52 @@
+name: pengantar_so
+description: Aplikasi Perencanaan Rawat Inap Dari Poliklinik Rawat Jalan.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  charts_flutter: ^0.8.1
+  shared_preferences: ^0.5.4+3
+  http: ^0.12.0+2
+  gradient_app_bar: ^0.1.3
+  material_search: ^0.2.8
+  rxdart: ^0.22.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/background.png
+    - images/logo.png
+    - images/ic_doctor.png
+    - images/ic_lock.png
+    - images/ic_login.png
+    - images/ic_more.png
+    - images/ic_notif.png
+    - images/ic_create.png
+    - images/ic_pencil.png
+    - images/ic_search.png
+    - images/ic_search_white.png
+    - images/ic_profile.jpg
+
+  fonts:
+    - family: SF
+      fonts:
+        - asset: fonts/sf_regular.otf
+          weight: 500
+        - asset: fonts/sf_medium.otf
+          weight: 600
+        - asset: fonts/sf_semi.ttf
+          weight: 700
+        - asset: fonts/sf_black.otf
+          weight: 800
