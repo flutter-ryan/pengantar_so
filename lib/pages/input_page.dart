@@ -180,27 +180,27 @@ class _InputPageState extends State<InputPage> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      _buildText(
-                          '$pasien.norm', Colors.black, 32.0, FontWeight.w700),
+                      _buildText('${pasien.norm}', Colors.black, 32.0,
+                          FontWeight.w700),
                       SizedBox(
                         height: 8.0,
                       ),
-                      _buildText(
-                          '$pasien.nama', Colors.black, 18.0, FontWeight.w500),
-                      SizedBox(
-                        height: 4.0,
-                      ),
-                      _buildText('$pasien.tglLahir', Colors.black, 18.0,
+                      _buildText('${pasien.nama}', Colors.black, 18.0,
                           FontWeight.w500),
                       SizedBox(
                         height: 4.0,
                       ),
-                      _buildText('$pasien.jenisKelamin.jk', Colors.black, 18.0,
+                      _buildText('${pasien.tglLahir}', Colors.black, 18.0,
                           FontWeight.w500),
                       SizedBox(
                         height: 4.0,
                       ),
-                      _buildText('$pasien.alamat', Colors.black, 18.0,
+                      _buildText('${pasien.jenisKelamin.jk}', Colors.black,
+                          18.0, FontWeight.w500),
+                      SizedBox(
+                        height: 4.0,
+                      ),
+                      _buildText('${pasien.alamat}', Colors.black, 18.0,
                           FontWeight.w500),
                       SizedBox(
                         height: 24.0,
