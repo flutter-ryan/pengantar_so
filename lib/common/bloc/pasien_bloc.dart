@@ -9,11 +9,11 @@ class PasienBloc {
 
   Observable<Pasien> get pasien => _pasienGet.stream;
 
-  dataPasien() async {
-    Pasien pasienData = await _repositoryPasien.fetchPasien();
+  // dataPasien() async {
+  //   Pasien pasienData = await _repositoryPasien.fetchPasien();
 
-    _pasienGet.sink.add(pasienData);
-  }
+  //   _pasienGet.sink.add(pasienData);
+  // }
 
   dispose() {
     _pasienGet.close();
