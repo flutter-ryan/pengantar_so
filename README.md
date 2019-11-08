@@ -1,6 +1,6 @@
 # pengantar_so
 
-A new Flutter project.
+A Flutter project for pengantar rawat inap.
 
 ## Getting Started
 
