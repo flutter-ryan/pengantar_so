@@ -13,6 +13,10 @@ class ProperApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'SF',
+        primaryColor: Colors.blue,
+        accentColor: Colors.blueAccent,
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Colors.grey[350],
       ),
       home: LoginPage(),
     );
