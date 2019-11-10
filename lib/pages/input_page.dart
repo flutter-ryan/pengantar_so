@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:pengantar_so/common/bloc/pasien_bloc.dart';
+import 'package:pengantar_so/common/functions/show_loading_dialog.dart';
 import 'package:pengantar_so/common/widget_builder/input_so.dart';
 import 'package:pengantar_so/model/dummy.dart';
 import 'package:pengantar_so/model/pasien.dart';
@@ -55,7 +55,7 @@ class _InputPageState extends State<InputPage> {
               snapshot.hasData &&
               snapshot.data != null) {
             Dummy dummy = snapshot.data;
-            return _buildIdentitas(dummy);
+            return _buildIdentitas(context, dummy);
           } else {
             if (snapshot.hasError) {
               return Center(
@@ -66,36 +66,7 @@ class _InputPageState extends State<InputPage> {
                 ),
               );
             }
-            return Center(
-              child: Card(
-                elevation: 4.0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(22.0)),
-                child: Container(
-                  height: 200.0,
-                  width: 200.0,
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 16.0),
-                  child: Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Container(
-                            height: 80.0,
-                            width: 80.0,
-                            child: CircularProgressIndicator()),
-                        SizedBox(height: 24.0),
-                        Text(
-                          'Please wait!',
-                          style: TextStyle(
-                              fontSize: 20.0, fontWeight: FontWeight.w700),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            );
+            return ShowLoadingDialog();
           }
         },
       ),
@@ -160,7 +131,7 @@ class _InputPageState extends State<InputPage> {
     );
   }
 
-  Widget _buildIdentitas(Dummy dummy) {
+  Widget _buildIdentitas(context, Dummy dummy) {
     return Container(
       padding: EdgeInsets.fromLTRB(64.0, 0.0, 64.0, 0.0),
       height: MediaQuery.of(context).size.height,
@@ -173,15 +144,12 @@ class _InputPageState extends State<InputPage> {
             Color(0xFFB2A67E),
           ],
         ),
-        boxShadow: [
-          BoxShadow(blurRadius: 4.0, color: Colors.grey[700]),
-        ],
       ),
       child: Column(
         children: <Widget>[
           Expanded(
             flex: 1,
-            child: _buildProfile(dummy),
+            child: _buildProfile(context, dummy),
           ),
           Expanded(
             flex: 3,
@@ -192,9 +160,8 @@ class _InputPageState extends State<InputPage> {
     );
   }
 
-  _buildProfile(Dummy dummy) {
-    return Padding(
-      padding: const EdgeInsets.all(18.0),
+  Widget _buildProfile(context, Dummy dummy) {
+    return Center(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -223,26 +190,26 @@ class _InputPageState extends State<InputPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 _buildText(
-                    '${dummy.nomorKartu}', Colors.black, 32.0, FontWeight.w700),
+                    '${dummy.nomorKartu}', Colors.black, 26.0, FontWeight.w700),
                 SizedBox(
-                  height: 8.0,
+                  height: 4.0,
                 ),
-                _buildText('${dummy.namaPendonor}', Colors.black, 18.0,
+                _buildText('${dummy.namaPendonor}', Colors.black54, 18.0,
                     FontWeight.w500),
                 SizedBox(
                   height: 4.0,
                 ),
-                _buildText('${dummy.tanggalLahir}', Colors.black, 18.0,
+                _buildText('${dummy.tanggalLahir}', Colors.black54, 18.0,
                     FontWeight.w500),
                 SizedBox(
                   height: 4.0,
                 ),
-                _buildText(
-                    '${dummy.pekerjaan}', Colors.black, 18.0, FontWeight.w500),
+                _buildText('${dummy.pekerjaan}', Colors.black54, 18.0,
+                    FontWeight.w500),
                 SizedBox(
                   height: 4.0,
                 ),
-                _buildText('${dummy.alamatRumah}', Colors.black, 18.0,
+                _buildText('${dummy.alamatRumah}', Colors.black54, 18.0,
                     FontWeight.w500),
                 SizedBox(
                   height: 24.0,

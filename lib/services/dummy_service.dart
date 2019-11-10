@@ -10,7 +10,7 @@ class DummyService {
     final response = await http.get('$_baseUrl/dummy/$nomor');
 
     if (response.statusCode == 200) {
-      return Future.delayed(Duration(milliseconds: 2000)).then(
+      return Future.delayed(Duration(seconds: 1)).then(
         (onValue) => dummyFromJson(response.body),
       );
     } else if (response.body.isEmpty) {
