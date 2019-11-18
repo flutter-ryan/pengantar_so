@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_search/material_search.dart';
 import 'package:pengantar_so/common/widget_builder/text_field.dart';
+import 'package:pengantar_so/pages/chart_view.dart';
 import 'package:pengantar_so/pages/home_page.dart';
 
 void main() => runApp(ProperApp());
@@ -28,7 +29,7 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
-const URL = 'http://localhost:8000/api/login';
+const URL = 'http://10.0.2.2/api/login';
 
 class _LoginPageState extends State<LoginPage> {
   String email = '';

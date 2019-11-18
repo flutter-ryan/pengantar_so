@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
+import 'package:pengantar_so/pages/chart_view.dart';
 import 'package:pengantar_so/pages/input_page.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
@@ -55,7 +56,8 @@ class _HomepageState extends State<Homepage> {
             Card(
               elevation: 4.0,
               child: Container(
-                height: 200,
+                height: MediaQuery.of(context).size.height / 2,
+                child: ChartView(),
               ),
             )
           ],

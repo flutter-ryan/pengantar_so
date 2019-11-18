@@ -5,7 +5,7 @@ Pasien pasienFromJson(String str) => Pasien.fromJson(json.decode(str));
 String pasienToJson(Pasien data) => json.encode(data.toJson());
 
 class Pasien {
-  String norm;
+  int norm;
   String nama;
   String tglLahir;
   String alamat;
