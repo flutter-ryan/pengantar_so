@@ -21,6 +21,7 @@ class _ChartViewState extends State<ChartView> {
   }
 
   List<Riwayat> myData;
+
   _generatedData(myData) {
     _seriesBarData = List<charts.Series<Riwayat, String>>();
     _seriesBarData.add(
@@ -47,6 +48,10 @@ class _ChartViewState extends State<ChartView> {
         if (snapshot.hasData) {
           List<Riwayat> data = snapshot.data;
           return _buildChart(context, data);
+        } else if (snapshot.hasError) {
+          return Center(
+            child: Text('Connection problem!'),
+          );
         }
         return Center(
           child: CircularProgressIndicator(),
